@@ -8,13 +8,13 @@
 	</body>
 	<script type="text/javascript" src="js/dialog.class.js" ></script>
 	<script type="text/javascript">
-		var dlg = new Dialog();
+		var dlg = new Dialog(
+			(window.innerWidth||(document.body&&document.body.clientWidth))/3,
+			(window.innerHeight||(document.body&&document.body.clientHeight))/8
+		);
 		dlg.Show("aa");
-		/*window.onresize=function(){
-			dlg.Resize(
-				(window.innerWidth||(document.body&&document.body.clientWidth))/3,
-				(window.innerHeight||(document.body&&document.body.clientHeight))/10
-			);
-		};*/
+		setTimeout(function(){
+			dlg.Close();
+		},5000);
 	</script>
 </html>
